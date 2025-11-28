@@ -2,17 +2,25 @@
 using namespace std;
 
 int* find(string input,string pattern,int n, int m, int &count){
+    int comp = 0;
     int* arr = new int[10];
     count =0;
     for(int i=0;i<n-m;i++){
+        comp++;
         int j=0;
+        
         while(input[i+j]==pattern[j]){
             j++;
+            
             if(j==m){
                 arr[count++]=i;
             }
+            comp++;
         }
     }
+
+    cout<<"Comparisions: "<<comp<<endl;
+
     return arr;
 }
 
